@@ -1,0 +1,5 @@
+Django==1.11.5
+django-bootstrap-ui==0.5.1
+django-tag-parser==2.1
+dominate==2.1.17
+pytz==2017.3

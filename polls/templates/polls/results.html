@@ -1,0 +1,24 @@
+
+{% extends "bootstrap_ui/bootstrap-skeleton.html" %}
+{% block body-content %}
+
+<div class="container">
+	<div class="span6">
+		<h1> {{ question.question_text }}</h1>
+		<ul>
+		    {% for choice in question.choice_set.all %}
+		    	<strong>{{ choice.choice_text }}</strong>
+		    	<span class="pull-right"> {{ choice.votes }} vote(s)</span>
+		    	<div class="progress progress-info active">
+					<div class="progress-bar progress-bar-striped" style="width: {{ choice.percent_votes }}%"></div>
+				</div>
+		    
+		    {% endfor %}
+		</ul>
+
+		<p>
+			<a href="{% url 'detail' question.id %}" class="btn btn-large btn-success"> Vote again? </a>
+		</p>
+	</div>
+</div>
+{% endblock %}
